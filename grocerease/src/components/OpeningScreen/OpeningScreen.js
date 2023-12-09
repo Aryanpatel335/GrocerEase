@@ -1,25 +1,22 @@
 // OpeningScreen.js
 
 import React, { useState } from 'react';
-import HomeScreen from '../HomeScreen/HomeScreen';
-import logo from '../../img/logo.jpeg';
+import logo from '../../img/logo.jpeg'; // Replace with the path to your logo file
 import './OpeningScreen.css';
 
-const OpeningScreen = () => {
+const OpeningScreen = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginError, setLoginError] = useState(false);
-    const [isLoggedIn, setLoggedIn] = useState(false);
 
     const checkCredentials = () => {
         const correctUsername = 'test';
         const correctPassword = '123';
 
         if (username === correctUsername && password === correctPassword) {
-            setLoggedIn(true);
+            onLogin();
             setLoginError(false);
         } else {
-            setLoggedIn(false);
             setLoginError(true);
         }
     };
@@ -55,8 +52,6 @@ const OpeningScreen = () => {
                     </button>
 
                     {loginError && <p className="error-message">Incorrect username or password. Please try again.</p>}
-
-                    {isLoggedIn && <HomeScreen />}
                 </form>
             </div>
         </div>

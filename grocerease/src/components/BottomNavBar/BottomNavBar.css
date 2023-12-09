@@ -1,0 +1,30 @@
+/* BottomNavbar.css */
+
+.bottom-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #3498db;
+    /* Navbar background color */
+}
+
+button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    opacity: 0.8;
+}

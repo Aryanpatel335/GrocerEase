@@ -1,10 +1,11 @@
 // HomeScreen.js
 
 import React from 'react';
+import BottomNavbar from '../BottomNavBar/BottomNavBar';
 import './HomeScreen.css';
 
 const HomeScreen = () => {
-    const groceryLists = ["List A", "List B", "List C"]; // Add more lists as needed
+    const groceryLists = ["List A", "List B", "List C"];
 
     return (
         <div className="home-screen">
@@ -24,6 +25,8 @@ const HomeScreen = () => {
             </div>
 
             <button className="add-button">Add</button>
+
+            <BottomNavbar />
         </div>
     );
 };

@@ -1,35 +1,31 @@
 /* HomeScreen.css */
 
 .home-screen {
-    min-height: 100vh;
-    /* Ensure the background takes up the full page */
-    padding: 20px;
-    background-color: #ecf0f1;
-    /* Background color */
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    /* Adjust to distribute space between items */
+    height: 100vh;
+    padding: 20px;
+    background-color: #ecf0f1;
+    box-sizing: border-box;
 }
 
 h1 {
     text-align: center;
     color: #3498db;
-    /* Heading color */
 }
 
 .heading-sub {
     font-size: 1.2em;
     margin-top: 10px;
     color: #555;
-    /* Sub-heading color */
 }
 
 .grocery-lists {
-    margin-top: 20px;
     width: 100%;
     flex-grow: 1;
-    /* Make the lists take up the full width */
 }
 
 .list-item {
@@ -71,7 +67,7 @@ h1 {
     width: 100%;
     box-sizing: border-box;
     border-radius: 4px;
-    margin-top: 20px;
+    margin-bottom: 60px;
     transition: background-color 0.3s ease;
 }
 
