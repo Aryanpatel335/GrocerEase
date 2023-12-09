@@ -1,0 +1,62 @@
+.list-detail-container {
+  padding: 20px;
+  background-color: #fff; /* or any color that matches your app's theme */
+}
+
+.list-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.list-header h1 {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+.list-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-price {
+  /* Styles to make it look like a placeholder for the price input */
+  border: none;
+  color: #aaa; /* Placeholder text color */
+  min-width: 100px; /* Adjust as necessary */
+}
+
+.add-price-button {
+  background-color: #f0f0f0; /* Light grey background */
+  border: 1px solid #ddd; /* Slightly darker border */
+  border-radius: 50%; /* Circular shape */
+  width: 30px; /* Match this size with your design */
+  height: 30px;
+  font-size: 24px;
+  line-height: 30px; /* Center the plus sign vertically */
+  text-align: center;
+  cursor: pointer;
+}
+
+.add-price-button:hover {
+  background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Add other styles for your bottom navbar here */
+}

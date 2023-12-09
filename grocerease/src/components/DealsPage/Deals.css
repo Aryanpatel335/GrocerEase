@@ -1,0 +1,30 @@
+/* Deals.css */
+.deals-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.deals-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.deal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.deal-price {
+  font-weight: bold;
+}
+
+.deal-info {
+  font-size: 0.9rem;
+  color: #666;
+}
