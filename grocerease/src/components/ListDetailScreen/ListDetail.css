@@ -1,62 +1,77 @@
 .list-detail-container {
-  padding: 20px;
-  background-color: #fff; /* or any color that matches your app's theme */
+  font-family: "Arial", sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  padding-bottom: 60px; /* Adjust if bottom navbar is taller */
 }
 
 .list-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e7e7e7;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .list-header h1 {
-  border-bottom: 2px solid black;
-  padding-bottom: 5px;
-}
-
-.list-items {
-  list-style-type: none;
-  padding: 0;
   margin: 0;
+  font-size: 24px;
 }
 
-.list-item {
+.list-table {
+  margin-top: 20px;
+}
+
+.list-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  justify-content: space-between;
+  border-bottom: 1px solid #e7e7e7;
 }
 
-.item-name {
+.list-row.list-header {
   font-weight: bold;
+  background-color: #f0f0f0;
 }
 
-.item-price {
-  /* Styles to make it look like a placeholder for the price input */
-  border: none;
-  color: #aaa; /* Placeholder text color */
-  min-width: 100px; /* Adjust as necessary */
+.list-column {
+  flex-grow: 1;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.list-column.item-name,
+.list-column.item-location,
+.list-column.item-price {
+  /* Ensure the basis for each column matches the content size */
+  flex-basis: auto;
+}
+
+.add-price-column {
+  flex-basis: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .add-price-button {
-  background-color: #f0f0f0; /* Light grey background */
-  border: 1px solid #ddd; /* Slightly darker border */
-  border-radius: 50%; /* Circular shape */
-  width: 30px; /* Match this size with your design */
-  height: 30px;
-  font-size: 24px;
-  line-height: 30px; /* Center the plus sign vertically */
-  text-align: center;
+  background-color: #28a745; /* Green color for the button */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  padding: 5px;
   cursor: pointer;
+  font-size: 1rem; /* Adjust the font size if needed */
+  line-height: 1; /* Center the '+' vertically */
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .add-price-button:hover {
-  background-color: #e0e0e0; /* Slightly darker on hover */
-}
-
-.bottom-navbar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  /* Add other styles for your bottom navbar here */
+  background-color: #218838; /* Darker green color on hover */
 }

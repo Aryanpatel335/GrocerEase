@@ -1,12 +1,42 @@
 /* Deals.css */
-.deals-container {
-  padding: 20px;
+
+.deals-header {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space between items */
+  padding: 20px; /* Padding around the header */
   background-color: #f9f9f9;
 }
 
+.deals-title {
+  font-size: 24px; /* Size of the deals title */
+  margin: 0; /* Reset margin for the title if needed */
+  flex-grow: 1; /* Allow the title to take up available space */
+  text-align: center; /* Center the title */
+}
+
+.back-button {
+  padding: 5px 10px; /* Smaller padding for a smaller button */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Smaller font size */
+  text-decoration: none; /* If it's an anchor tag */
+  margin-right: auto; /* Push the button to the left */
+}
+.deals-container {
+  padding: 20px;
+  background-color: #f9f9f9; /* Background color of the entire deals container */
+  min-height: 100vh; /* Full height view */
+  position: relative; /* For absolute positioning of children */
+}
+
 .deals-list {
-  list-style-type: none;
+  list-style-type: none; /* Remove bullet points */
   padding: 0;
+  margin-top: 60px; /* Provide space for the back button */
 }
 
 .deal-item {
@@ -22,9 +52,57 @@
 
 .deal-price {
   font-weight: bold;
+  font-size: 20px; /* Make the price larger and bolder */
 }
 
 .deal-info {
-  font-size: 0.9rem;
-  color: #666;
+  flex-grow: 1; /* Allow the info to take up the available space */
+  text-align: left; /* Align text to the left */
+  margin-left: 10px; /* Space between the price and the info */
+}
+
+/* Style the back button */
+
+.back-button:hover {
+  background-color: #0056b3; /* Darken color on hover */
+}
+
+/* Style for the heading */
+.deals-heading {
+  font-size: 24px; /* Size of the deals heading */
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Additional styling if needed */
+.bottom-navbar {
+  background-color: #007bff; /* Background color for the bottom navbar */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0; /* Reduced padding for a thinner navbar */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.deal-add-button {
+  background-color: #28a745; /* Bootstrap success color */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular shape */
+  padding: 0.5em; /* Padding to form a square, will be circular due to border-radius */
+  font-size: 1em; /* Relative font size */
+  cursor: pointer;
+  line-height: 1; /* Adjust line height to vertically center the '+' */
+  width: 1.5em; /* Width of the button */
+  height: 1.5em; /* Height of the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deal-add-button:hover {
+  background-color: #218838; /* A darker green for hover effect */
 }
