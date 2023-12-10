@@ -12,14 +12,14 @@ function App() {
   const handleLogin = () => {
     setLoggedIn(true);
   };
+  const [lists, setLists] = useState([
+    // ... pre-populated lists
 
-  // Mock data for lists, replace with real data as needed
-  const lists = [
     {
       name: "List A",
       items: [
-        { name: "Milk", price: "1.99" },
-        { name: "Bread", price: "2.50" },
+        { name: "Milk", store: "Click to Add", price: "Click to Add" },
+        { name: "Bread", store: "Click to Add", price: "Click to Add" },
         // { name: "Apples", price: "0.99" },
         // { name: "Chicken", price: "5.49" },
         // { name: "Rice", price: "1.89" },
@@ -29,9 +29,9 @@ function App() {
     {
       name: "List B",
       items: [
-        { name: "Eggs", price: "2.00" },
-        { name: "Orange Juice", price: "3.99" },
-        { name: "Lettuce", price: "1.49" },
+        { name: "Eggs", store: "Click to Add", price: "Click to Add" },
+        { name: "Orange Juice", store: "Click to Add", price: "Click to Add" },
+        { name: "Lettuce", store: "Click to Add", price: "Click to Add" },
         // { name: "Pasta", price: "1.25" },
         // { name: "Coffee", price: "6.99" },
         // { name: "Butter", price: "3.59" },
@@ -40,7 +40,7 @@ function App() {
     {
       name: "List C",
       items: [
-        { name: "Cheese", price: "2.99" },
+        { name: "Cheese", store: "Click to Add", price: "Click to Add" },
         // { name: "Potatoes", price: "3.20" },
         // { name: "Carrots", price: "1.10" },
         // { name: "Beef", price: "5.99" },
@@ -48,8 +48,9 @@ function App() {
         // { name: "Spinach", price: "3.00" },
       ],
     },
-    // ...you can add other lists if needed
-  ];
+  ]);
+
+  // Mock data for lists, replace with real data as needed
 
   const deals = [
     {
@@ -131,6 +132,36 @@ function App() {
     },
   ];
 
+  const addItemToList = (itemName, listName, price, store) => {
+    setLists((currentLists) => {
+      const listIndex = currentLists.findIndex(
+        (list) => list.name === listName
+      );
+      if (listIndex > -1) {
+        // Find the index of the item if it already exists in the list
+        const itemIndex = currentLists[listIndex].items.findIndex(
+          (item) => item.name === itemName
+        );
+
+        const newLists = [...currentLists]; // Clone the current lists array for immutability
+        let newItems = [...newLists[listIndex].items]; // Clone the items array within the selected list
+
+        if (itemIndex > -1) {
+          // If the item exists, update its price and store
+          newItems[itemIndex] = { ...newItems[itemIndex], price, store };
+        } else {
+          // If the item doesn't exist, add the new item
+          newItems = [...newItems, { name: itemName, price, store }];
+        }
+
+        // Update the items array for the selected list
+        newLists[listIndex].items = newItems;
+        return newLists;
+      }
+      return currentLists;
+    });
+  };
+
   return (
     <Router>
       <div className="App">
@@ -168,10 +199,10 @@ function App() {
             }
           />
           <Route
-            path="/deals/:itemName"
+            path="/list/:listName/deals/:itemName"
             element={
               isLoggedIn ? (
-                <Deals deals={deals} />
+                <Deals deals={deals} addItemToList={addItemToList} />
               ) : (
                 <OpeningScreen onLogin={handleLogin} />
               )

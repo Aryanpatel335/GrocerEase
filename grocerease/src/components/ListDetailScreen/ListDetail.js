@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import BottomNavbar from "../BottomNavBar/BottomNavBar";
-import "./ListDetail.css"; // Import the CSS stylesheet
+import "./ListDetail.css"; // Make sure the CSS file matches the styles you want
 
 const ListDetail = ({ lists }) => {
   const navigate = useNavigate();
@@ -11,8 +11,9 @@ const ListDetail = ({ lists }) => {
   if (!list) {
     return <div>List not found</div>;
   }
+
   const navigateToDeals = (itemName) => {
-    navigate(`/deals/${itemName}`);
+    navigate(`/list/${listName}/deals/${itemName}`);
   };
 
   return (
@@ -20,22 +21,28 @@ const ListDetail = ({ lists }) => {
       <header className="list-header">
         <h1>{list.name}</h1>
       </header>
-      <ul className="list-items">
+      <div className="list-table">
+        <div className="list-row list-header">
+          <span className="list-column item-name">Item</span>
+          <span className="list-column item-location">Location</span>
+          <span className="list-column item-price">Price</span>
+          <span className="list-column add-column-header">Add</span>
+        </div>
         {list.items.map((item, index) => (
-          <li key={index} className="list-item">
-            <span className="item-name">{item.name}</span>
-            <span className="item-price">Locate Price</span>
-            <button
-              className="add-price-button"
-              onClick={() => navigateToDeals(item.name)}
-            >
-              +
-            </button>
-          </li>
+          <div key={index} className="list-row">
+            <span className="list-column item-name">{item.name}</span>
+            <span className="list-column item-location">{item.store}</span>
+            <span className="list-column item-price">{item.price}</span>
+            <div className="list-column add-price-column">
+              <button
+                className="add-price-button"
+                onClick={() => navigateToDeals(item.name)}
+              >
+                +
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
-      <div className="bottom-navbar">
-        {/* Include your BottomNavbar component or its content here */}
       </div>
       <BottomNavbar />
     </div>
