@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Us
 import OpeningScreen from "./components/OpeningScreen/OpeningScreen";
 import HomeScreen from "./components/HomeScreen/HomeScreen";
 import ListDetail from "./components/ListDetailScreen/ListDetail";
+import GroupScreen from "./components/GroupScreen/GroupScreen";
+import GroupDetails from "./components/GroupDetails/GroupDetails";
 import "./App.css";
 import Deals from "./components/DealsPage/Deals";
 
@@ -161,6 +163,30 @@ function App() {
       return currentLists;
     });
   };
+  const groups = [
+    {
+      name: "Houre",
+      members: 5,
+      lists: [
+        "List A",
+        "List B"
+      ]
+    },
+    {
+      name: "Room B",
+      members: 4,
+      lists: [
+        "List A"
+      ]
+    },
+    {
+      name: "Club Team",
+      members: 10,
+      lists: [
+        "List C"
+      ]
+    }
+  ]
 
   return (
     <Router>
@@ -203,6 +229,26 @@ function App() {
             element={
               isLoggedIn ? (
                 <Deals deals={deals} addItemToList={addItemToList} />
+              ) : (
+                <OpeningScreen onLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/groups"
+            element={
+              isLoggedIn ? (
+                <GroupScreen groups={groups} lists={lists}/>
+              ) : (
+                <OpeningScreen onLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/groupDetails/:groupName"
+            element={
+              isLoggedIn ? (
+                <GroupDetails groups={groups} lists={lists}/>
               ) : (
                 <OpeningScreen onLogin={handleLogin} />
               )
