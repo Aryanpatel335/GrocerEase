@@ -171,7 +171,7 @@ function App() {
   };
   const groups = [
     {
-      name: "Houre",
+      name: "House",
       members: 5,
       lists: [
         "List A",
