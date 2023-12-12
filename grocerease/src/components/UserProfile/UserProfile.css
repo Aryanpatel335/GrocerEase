@@ -1,0 +1,23 @@
+/* UserProfile.css */
+
+.user-profile-container {
+    padding: 20px;
+    text-align: center;
+    background-color: #ecf0f1;
+    min-height: 100vh;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}

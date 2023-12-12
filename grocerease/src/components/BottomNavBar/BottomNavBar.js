@@ -22,7 +22,7 @@ const BottomNavbar = () => {
             <button onClick={() => navigateTo(`/groups`)}>
                 <FontAwesomeIcon icon={faUsers} />
             </button>
-            <button>
+            <button onClick={() => navigateTo(`/user`)}>
                 <FontAwesomeIcon icon={faUser} />
             </button>
         </div>

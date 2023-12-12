@@ -6,6 +6,7 @@ import ListDetail from "./components/ListDetailScreen/ListDetail";
 import GroupScreen from "./components/GroupScreen/GroupScreen";
 import GroupDetails from "./components/GroupDetails/GroupDetails";
 import DiscountsScreen from "./components/DiscountsScreen/DiscountsScreen";
+import UserProfile from "./components/UserProfile/UserProfile";
 import "./App.css";
 import Deals from "./components/DealsPage/Deals";
 
@@ -14,6 +15,10 @@ function App() {
 
   const handleLogin = () => {
     setLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setLoggedIn(false);
   };
   const [lists, setLists] = useState([
     // ... pre-populated lists
@@ -260,6 +265,16 @@ function App() {
             element={
               isLoggedIn ? (
                 <DiscountsScreen />
+              ) : (
+                <OpeningScreen onLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/user"
+            element={
+              isLoggedIn ? (
+                <UserProfile onLogout={handleLogout} />
               ) : (
                 <OpeningScreen onLogin={handleLogin} />
               )
