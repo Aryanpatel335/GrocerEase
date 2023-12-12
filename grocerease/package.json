@@ -1,7 +1,7 @@
 {
   "name": "grocerease",
   "version": "0.1.0",
-  "homepage": "https://Aryanpatel335.github.io/GrocerEase",
+  "homepage": "https://Aryanpatel335.github.io/GrocerEase/grocerease",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
