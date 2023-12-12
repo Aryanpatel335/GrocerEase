@@ -16,7 +16,7 @@ const BottomNavbar = () => {
             <button onClick={() => navigateTo(`/home`)}>
                 <FontAwesomeIcon icon={faHome} />
             </button>
-            <button>
+            <button onClick={() => navigateTo(`/discounts`)}>
                 <FontAwesomeIcon icon={faDollarSign} />
             </button>
             <button onClick={() => navigateTo(`/groups`)}>

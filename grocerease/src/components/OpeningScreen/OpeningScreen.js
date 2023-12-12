@@ -1,7 +1,7 @@
 // OpeningScreen.js
 
 import React, { useState } from 'react';
-import logo from '../../img/logo.jpeg'; // Replace with the path to your logo file
+import logo from '../../img/logo.png'; // Replace with the path to your logo file
 import './OpeningScreen.css';
 
 const OpeningScreen = ({ onLogin }) => {

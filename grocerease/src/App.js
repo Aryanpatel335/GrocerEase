@@ -5,6 +5,7 @@ import HomeScreen from "./components/HomeScreen/HomeScreen";
 import ListDetail from "./components/ListDetailScreen/ListDetail";
 import GroupScreen from "./components/GroupScreen/GroupScreen";
 import GroupDetails from "./components/GroupDetails/GroupDetails";
+import DiscountsScreen from "./components/DiscountsScreen/DiscountsScreen";
 import "./App.css";
 import Deals from "./components/DealsPage/Deals";
 
@@ -238,7 +239,7 @@ function App() {
             path="/groups"
             element={
               isLoggedIn ? (
-                <GroupScreen groups={groups} lists={lists}/>
+                <GroupScreen groups={groups} lists={lists} />
               ) : (
                 <OpeningScreen onLogin={handleLogin} />
               )
@@ -248,7 +249,17 @@ function App() {
             path="/groupDetails/:groupName"
             element={
               isLoggedIn ? (
-                <GroupDetails groups={groups} lists={lists}/>
+                <GroupDetails groups={groups} lists={lists} />
+              ) : (
+                <OpeningScreen onLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/discounts"
+            element={
+              isLoggedIn ? (
+                <DiscountsScreen />
               ) : (
                 <OpeningScreen onLogin={handleLogin} />
               )
