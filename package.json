@@ -1,7 +1,7 @@
 {
   "name": "grocerease",
   "version": "0.1.0",
-  "homepage": "https://Aryanpatel335.github.io/GrocerEase/grocerease",
+  "homepage": "https://Aryanpatel335.github.io/GrocerEase",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --baseHref='/Grocerease/grocerease/'",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
